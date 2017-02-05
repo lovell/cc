@@ -1,0 +1,34 @@
+{
+  "name": "cc",
+  "version": "1.0.0",
+  "description": "Code style linter for C++ source files used in Node.js native addons",
+  "author": "Lovell Fuller <npm@lovell.info>",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/lovell/cc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lovell/cc.git"
+  },
+  "scripts": {
+    "test": "semistandard"
+  },
+  "bin": {
+    "cc": "./bin/cc.js"
+  },
+  "keywords": [
+    "cc",
+    "cpp",
+    "cplusplus",
+    "linter",
+    "addon",
+    "native"
+  ],
+  "dependencies": {
+    "deglob": "^2.1.0",
+    "pkg-conf": "^2.0.0",
+    "python-shell": "^0.4.0"
+  },
+  "devDependencies": {
+    "semistandard": "^9.2.1"
+  }
+}
