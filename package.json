@@ -1,6 +1,6 @@
 {
   "name": "cc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Code style linter for C++ source files used in Node.js native addons",
   "author": "Lovell Fuller <npm@lovell.info>",
   "license": "Apache-2.0",
