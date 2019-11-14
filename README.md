@@ -7,33 +7,37 @@ Follows the [Google C++ Style Guide](https://google.github.io/styleguide/cppguid
 As `standard`, `semistandard` and `xo` are to your JavaScript source files,
 `cc` is to your C++ source files.
 
-## Install
+## Using from the command line
+
+```sh
+npx cc
+```
+
+## Adding to a native module as a development dependency
 
 ```sh
 npm install cc --save-dev
 ```
 
-## Usage
+Add `cpplint` to the test script of your project's `package.json` file.
 
-Add `cc` to the test script of your project's `package.json` file.
-
-The following example uses `xo` for linting JavaScript, `cc` for linting C++ and `ava` for unit tests.
+The following example uses `xo` for linting JavaScript, `cpplint` for linting C++ and `ava` for unit tests.
 
 ```json
 {
   "name": "awesome-native-package",
   "scripts": {
-    "test": "xo && cc && ava"
+    "test": "xo && cpplint && ava"
   },
   "devDependencies": {
-    "ava": "^0.18.0",
-    "cc": "^1.0.0",
-    "xo": "^0.17.0"
+    "ava": "^2.4.0",
+    "cc": "^2.0.0",
+    "xo": "^0.25.3"
   }
 }
 ```
 
-## Defaults
+##= Defaults
 
 ```json
 "cc": {
@@ -52,7 +56,7 @@ The following example uses `xo` for linting JavaScript, `cc` for linting C++ and
 
 Files listed in `.gitignore` or contained within any "dot" directories (e.g. `.git`) are also ignored.
 
-## Example
+### Example
 
 Allow a line length of 120 characters and ignore all include checks:
 
@@ -60,10 +64,10 @@ Allow a line length of 120 characters and ignore all include checks:
 {
   "name": "awesome-native-package",
   "scripts": {
-    "test": "cc"
+    "test": "cpplint"
   },
   "devDependencies": {
-    "cc": "^1.0.0"
+    "cc": "^2.0.0"
   },
   "cc": {
     "linelength": "120",
@@ -80,7 +84,7 @@ Allow a line length of 120 characters and ignore all include checks:
 
 ## Licence
 
-Copyright 2017 Lovell Fuller.
+Copyright 2017, 2019 Lovell Fuller.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
