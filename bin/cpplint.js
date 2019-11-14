@@ -4,7 +4,9 @@
 
 const deglob = require("deglob");
 const pkgConf = require("pkg-conf");
-const pythonShell = require("python-shell");
+const { PythonShell } = require("python-shell");
+
+const pythonPath = process.platform === "win32" ? "py" : "python2";
 
 const config = pkgConf.sync("cc", {
   defaults: {
@@ -34,18 +36,17 @@ deglob(config.files, { ignore: config.ignore }, function(err, files) {
       );
     }
     const cppLintOptions = {
+      pythonPath,
       scriptPath: __dirname,
       args: args.concat(files)
     };
 
-    pythonShell
-      .run("cpplint.py", cppLintOptions)
-      .on("error", function(err) {
-        console.log(err.message);
-      })
-      .on("close", function() {
-        process.exit(this.exitCode);
-      });
+    PythonShell.run("cpplint.py", cppLintOptions, function(err) {
+      if (err) {
+        console.error(err.message);
+        process.exit(1);
+      }
+    });
   } else {
     console.error(`No files found matching ${config.files.join(", ")}`);
     process.exit(1);

@@ -37,7 +37,7 @@ The following example uses `xo` for linting JavaScript, `cpplint` for linting C+
 }
 ```
 
-##= Defaults
+### Defaults
 
 ```json
 "cc": {
