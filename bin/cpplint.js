@@ -6,18 +6,16 @@ const deglob = require("deglob");
 const pkgConf = require("pkg-conf");
 const { PythonShell } = require("python-shell");
 
-const pythonPath = process.platform === "win32" ? "py" : "python2";
-
 const config = pkgConf.sync("cc", {
   defaults: {
     linelength: "80",
     files: ["**/*.cc", "**/*.h"],
     ignore: ["node_modules/**", "vendor/**"],
-    filter: []
-  }
+    filter: [],
+  },
 });
 
-deglob(config.files, { ignore: config.ignore }, function(err, files) {
+deglob(config.files, { ignore: config.ignore }, function (err, files) {
   if (err) {
     console.error(err.message);
     process.exit(1);
@@ -29,19 +27,18 @@ deglob(config.files, { ignore: config.ignore }, function(err, files) {
       args.push("--filter");
       args.push(
         config.filter
-          .map(function(filter) {
+          .map(function (filter) {
             return `-${filter}`;
           })
           .join(",")
       );
     }
     const cppLintOptions = {
-      pythonPath,
       scriptPath: __dirname,
-      args: args.concat(files)
+      args: args.concat(files),
     };
 
-    PythonShell.run("cpplint.py", cppLintOptions, function(err) {
+    PythonShell.run("cpplint.py", cppLintOptions, function (err) {
       if (err) {
         console.error(err.message);
         process.exit(1);
