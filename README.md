@@ -31,7 +31,7 @@ The following example uses `xo` for linting JavaScript, `cpplint` for linting C+
   },
   "devDependencies": {
     "ava": "^2.4.0",
-    "cc": "^2.0.0",
+    "cc": "^3.0.0",
     "xo": "^0.25.3"
   }
 }
@@ -67,7 +67,7 @@ Allow a line length of 120 characters and ignore all include checks:
     "test": "cpplint"
   },
   "devDependencies": {
-    "cc": "^2.0.0"
+    "cc": "^3.0.0"
   },
   "cc": {
     "linelength": "120",
@@ -84,7 +84,7 @@ Allow a line length of 120 characters and ignore all include checks:
 
 ## Licence
 
-Copyright 2017, 2019 Lovell Fuller.
+Copyright 2017, 2019, 2020 Lovell Fuller.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
