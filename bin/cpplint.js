@@ -22,7 +22,12 @@ deglob(config.files, { ignore: config.ignore }, function (err, files) {
   }
 
   if (files.length) {
-    const args = ["--linelength", config.linelength];
+    const args = [
+      "--linelength",
+      config.linelength,
+      "--repository",
+      process.cwd(),
+    ];
     if (config.filter.length) {
       args.push("--filter");
       args.push(
