@@ -26,9 +26,9 @@
   "dependencies": {
     "deglob": "^4.0.1",
     "pkg-conf": "^3.1.0",
-    "python-shell": "^2.0.3"
+    "python-shell": "^5.0.0"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "prettier": "^3.0.0"
   }
 }

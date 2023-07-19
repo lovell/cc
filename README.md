@@ -84,7 +84,7 @@ Allow a line length of 120 characters and ignore all include checks:
 
 ## Licence
 
-Copyright 2017, 2019, 2020 Lovell Fuller.
+Copyright 2017 Lovell Fuller.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

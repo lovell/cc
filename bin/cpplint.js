@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+// Copyright 2017 Lovell Fuller.
+// SPDX-License-Identifier: Apache-2.0
+
 "use strict";
 
 const deglob = require("deglob");
@@ -35,7 +38,7 @@ deglob(config.files, { ignore: config.ignore }, function (err, files) {
           .map(function (filter) {
             return `-${filter}`;
           })
-          .join(",")
+          .join(","),
       );
     }
     const cppLintOptions = {
